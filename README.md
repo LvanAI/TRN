@@ -17,11 +17,12 @@ mpirun -n 8 python train.py > train.log 2>&1 &
 
 
 ```
-python eval.py --config <config path>
+python eval.py
 ```
 
 
 ## Acknowledgement
 
 We heavily borrow the code from [ TRN-pytorch](https://github.com/zhoubolei/TRN-pytorch)
+
 We thank the authors for the nicely organized code!
