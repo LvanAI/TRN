@@ -10,7 +10,7 @@ This work is used for reproduce TRN based on NPU(Ascend 910)
 ## Training
 
 ```
-mpirun -n 8 python train.py --config <config path> > train.log 2>&1 &
+mpirun -n 8 python train.py > train.log 2>&1 &
 ```
 
 ## Evaluation 
