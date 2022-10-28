@@ -1,0 +1,62 @@
+enable_modelarts: True
+# Url for modelarts
+run_ModelArts: True
+data_url: ./dataset
+train_url: ./train_log/
+
+checkpoint_url: ""
+# Path for local
+save_path: temp/
+
+# ==============================================================================
+# options
+
+# Context options
+device_target: Ascend
+is_train_distributed: True
+group_size: 8
+device_id: 0
+seed: 123
+
+# Model options
+num_segments: 16
+subsample_num: 8
+
+# Dataset options
+image_size: 224
+img_feature_dim: 512
+images_dir_name: Jester
+categories_list_file_path: class_file/category.txt
+train_list_file_path: class_file/train_videofolder.txt
+eval_list_file_path: class_file/val_videofolder.txt
+
+
+# Logging options
+train_output_path: logs/
+eval_output_path: logs/
+export_output_dir: logs/
+ckpt_save_interval: 1
+ckpt_save_on_master_only: True
+keep_checkpoint_max: 10
+log_interval: 100
+
+
+# Training options
+pre_trained_path: checkpoint/bn_inception.ckpt
+lr: 0.001
+clip_grad_norm: 20.0
+update_lr_epochs: 50
+epochs_num: 140
+train_batch_size: 12
+train_workers: 8
+momentum: 0.9
+dropout: 0.2
+weight_decay: 0.0005  # 5e-4
+
+
+# Evaluation and export options
+ckpt_file: "/path/to/trained/checkpoint"
+model_name: "trn"
+file_format: "MINDIR"
+export_batch_size: 1
+
